@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<div id="home-header">
+  
+  <!-- Title -->
+  <div id="home-header-title-container">
+    <h3 id="home-header-title">Welcome to University Planner</h3>
+  </div>
+  
+  <!-- Add Course Button -->
+  <div id="home-header-add-button-container">
+    <a href="/{{ user.id }}/add-course" class="btn btn-primary">
+      <i class="fas fa-plus"></i>Add a Course
+    </a>
+    <a href="/{{ user.id }}/planner" class="btn btn-secondary">
+      <i class="fas fa-book-open"></i>
+      Go to Planner
+    </a>
+  </div>
+  
+  <!-- Description -->
+  <div id="home-header-description-container">
+    <p>Just enter the classes you have left, along with their id's and number of credits. The app will tell you how many classes you have left and how many credits are left.</p>
+  </div>
+  
+  <!-- Totals -->
+  <div id="home-header-totals-container">
+    <div class="home-header-totals">
+      <h3>{{ courseCount }}</h3>
+      <p>Courses Left</p>
+    </div>
+    
+    <div class="home-header-totals">
+      <h3>{{ creditsCount }}</h3>
+      <p>Credits Left</p>
+    </div>
+    
+  </div>
+  
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="home-main-container">
+  
+  <!-- Toggle Section -->
+  <div id="home-toggle-container">
+    <button id="courses-remaining-toggle" class="btn btn-primary">Courses Remaining</button>
+    <button id="courses-finished-toggle" class="btn btn-secondary">Finished Courses</button>
+  </div>
+  
+  <!-- Courses Remaining: Table Section -->
+  <div id="home-tables-container">
+  <table id="remaining-table" class="home-credits-table visible">
+
+    <thead class="credits-list-header-row">
+      <th class="credits-column">Name</th>
+      <th class="credits-column">Number of Credits</th>
+      <th class="credits-column">Course ID</th>
+      <th class="credits-column">Edit</th>
+      <th class="credits-column">Delete</th>
+    </thead>
+    
+    <tbody>
+    {% for course in courses 
+      if course.finished == False %}
+      <tr class="course-row">
+        <td>{{ course.name }}</td>
+        <td>{{ course.num_credits }}</td>
+        <td>{{ course.class_id}}</td>
+        <td>
+          <a href="{{ user.id }}/{{ course.id }}/edit-course"><i class="fas fa-pen"></i></a>
+        </td>
+        <td>
+          <a href="{{ user.id }}/{{ course.id }}/delete-course"><i class="fas fa-trash"></i></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    
+  </table>
+  
+  <!-- Finished Courses : Table Section -->
+  <table id="finished-table" class="home-credits-table hidden">
+  
+    <thead class="credits-list-header-row">
+      <th class="credits-column">Name</th>
+      <th class="credits-column">Number of Credits</th>
+      <th class="credits-column">Course ID</th>
+      <th class="credits-column">Edit</th>
+      <th class="credits-column">Delete</th>
+    </thead>
+    
+    <tbody>
+    {% for course in courses 
+      if course.finished == True %}
+      <tr class="course-row">
+        <td>{{ course.name }}</td>
+        <td>{{ course.num_credits }}</td>
+        <td>{{ course.class_id}}</td>
+        <td>
+          <a href="{{ user.id }}/{{ course.id }}/edit-course"><i class="fas fa-pen"></i></a>
+        </td>
+        <td>
+          <a href="{{ user.id }}/{{ course.id }}/delete-course"><i class="fas fa-trash"></i></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    
+  </table>
+  </div>
+  
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<div id="register-title-container">
+  <h1 id="register-title">Register</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="register-form-container">
+  <form id="register-form" method="POST">
+    {{ form.hidden_tag() }}
+    
+    {% for field in form 
+        if field.widget.input_type != 'hidden' %}
+    
+    <div class="form-group">
+      {{ field.label }}
+      {{ field(class_="form-control") }}
+      
+      {% for error in field.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+    
+    {% endfor %}
+    
+    <button id="register-form-button" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+{% endblock %}

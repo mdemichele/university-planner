@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<div class="title-container">
+  <h3 id="add-course-title">Add a Course</h3>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="add-course-form-container">
+  <form id="add-course-form" method="POST">
+    {{ form.hidden_tag() }}
+    
+    {% for field in form 
+      if field.widget.input_type != 'hidden' %}
+      
+    <div class="form-group">
+      {{ field.label }}
+      {{ field(class_="form-control") }}
+      
+      {% for error in field.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+    
+    {% endfor %}
+    
+    <button id="add-course-form-button" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+
+{% endblock %}

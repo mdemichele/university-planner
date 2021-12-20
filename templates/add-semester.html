@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<div class="title-container">
+  <h3 id="planner-title">{{ plan.name }}</h3>
+</div>
+
+<div class="planner-buttons-container">
+  <a href="/{{ userId }}/planner/{{ plan.id }}" class="btn btn-danger">Back to {{ plan.name }}</a>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="semester-display-container">
+
+</div>
+
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+
+{% endblock %}

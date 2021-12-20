@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<div class="title-container">
+  <h3 id="planner-title">My Planner</h3>
+</div>
+
+<div class="planner-buttons-container">
+  <a href="/{{ userId }}/planner/create-new-planner" class="btn btn-primary"><i class="fas fa-plus"></i>Create a New Plan</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="planner-list-container">
+  
+  <!-- List Title Section -->
+  <div id="planner-list-title-container">
+    <h3 class="planner-list-title">Current Plans</h3>
+  </div>
+
+
+  <!-- Table Section -->
+  <div id="planner-table-container">
+    <table id="planner-table">
+    
+      <thead id="planner-table-header-row">
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+    
+      <tbody>
+        {% for plan in plans %}
+        <tr id="planner-table-row">
+          <td>
+            <a href="/{{ userId }}/planner/{{ plan.id }}">{{ plan.name }}</a>
+          </td>
+          <td>
+            <a href=""><i class="fas fa-pen"></i></a>
+          </td>
+          <td>
+            <a href=""><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    
+    </table>
+  
+  </div>
+</div>
+
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+
+{% endblock %}

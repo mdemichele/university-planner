@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<div class="title-container">
+  <h3 id="add-planner-title">New Plan</h3>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="add-planner-form-container">
+  <form id="add-planner-form" method="POST">
+    {{ form.hidden_tag() }}
+    
+    {% for field in form 
+      if field.widget.input_type != 'hidden' %}
+      
+    <div class="form-group">
+      {{ field.label }}
+      {{ field(class_="form-control") }}
+      
+      {% for error in field.errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+    
+    {% endfor %}
+    
+    <button id="add-planner-form-button" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+
+{% endblock %}

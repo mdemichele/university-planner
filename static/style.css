@@ -1,0 +1,292 @@
+/* ================================ Body wide */
+.title-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* ================================ Nav */
+
+.navbar {
+  background-color: #e2ece9;
+  height: 46px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 9999;
+}
+
+.navbar a {
+  color: #66757f;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #1c94e0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand i {
+  margin-right: 10px;
+}
+
+ul.nav.navbar-nav {
+  align-items: center;
+}
+
+ul.nav.navbar-nav li {
+  margin: 0 0.5rem;
+  display: flex;
+}
+
+nav form.navbar-form {
+  display: flex;
+  position: relative;
+}
+
+.navbar-right li a i {
+  margin-right: 5px;
+}
+
+
+/* Register Page Style */
+#register-title-container {
+  text-align: center;
+}
+
+#register-form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#register-form {
+  width: 40%;
+}
+
+#register-form-button {
+  margin-top: 20px;
+}
+
+/* =============================== Home Page */
+#home-header {
+  display: block;
+  width: 100%;
+}
+
+#home-header-title-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+#home-header-add-button-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+#home-header-add-button-container a {
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#home-header-add-button-container a i {
+  margin-right: 5px;
+}
+
+#home-header-description-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#home-header-description-container p {
+  width: 40%;
+  margin: 0;
+}
+
+#home-header-totals-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-header-totals {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 50%;
+  border: 5px solid black;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-header-totals h3 {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.home-header-totals p {
+  margin-bottom: 50px;
+}
+
+#home-main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+#home-toggle-container {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+#home-tables-container {
+  position: relative;
+  width: 60%;
+}
+
+.home-credits-table {
+  width: 100%;
+  position: absolute;
+}
+
+.credits-list-header-row {
+  border-bottom: 1px solid #D2D3D3;
+}
+
+tr.course-row {
+  height: 40px;
+  border-bottom: 0.25px solid #D2D3D3;
+}
+
+/* ================================ Add a Course Page */
+#add-course-form-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#add-course-form {
+  width: 40%;
+}
+
+#add-course-form button {
+  margin-top: 20px;
+}
+
+/* =============================== Edit a Course Page */
+#edit-course-form-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#edit-course-form {
+  width: 40%;
+}
+
+#edit-course-form button {
+  margin-top: 20px;
+}
+
+.form-checkbox-label {
+  width: 100%;
+}
+
+/* ================================ Planner Page */
+.planner-buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.planner-buttons-container a i {
+  margin-right: 10px;
+}
+
+#planner-list-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#planner-list-title-container {
+  width: 60%;
+  text-align: left;
+}
+
+#planner-table-container {
+  width: 60%;
+}
+
+#planner-table {
+  width: 100%;
+}
+
+#planner-table-header-row {
+  height: 40px;
+  border-bottom: 0.25px solid #D2D3D3;
+}
+
+#planner-table-row {
+  height: 40px;
+  border-bottom: 0.25px solid #D2D3D3;
+}
+
+/* ================================== Create a New Plan */
+#add-planner-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#add-planner-form {
+  width: 40%;
+}
+
+#add-planner-form-button {
+  margin-top: 20px;
+}
+
+/* ================================== Individual Planner Page */
+#semester-display-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
